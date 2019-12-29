@@ -7,7 +7,7 @@ curl -u dlxdfz https://api.github.com/user/repos -d '{"name": "repos_name"}'
 
 # linux创建git免密提交
 [参考](https://juejin.im/post/5aeff650f265da0b8070a7e0)
-···shell
+``````
 cd ~
 cd .ssh
 # 生成ssh-key
@@ -28,8 +28,20 @@ IdentityFile ~/.ssh/github_id_rsa
 # 在github上添加github_id_rsa.pub
 # 测试是否连接成功
 ssh -T git@github.com
-···
+``````
 
 # github提交本地仓库到remote 空仓库中
-···shell
-···
+```
+git init
+git remote add origin git@github.com:dlxdfz/repos.git
+git pull # 如果仓库非空
+git add .
+git commit -m "init commit"
+git push
+```
+# remote
+```
+git remote -v
+git remote rm origin
+git remote set-url --add --push git@github.com:dlxdfz/repos.git
+```
