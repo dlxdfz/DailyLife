@@ -1,12 +1,12 @@
 github作为服务器
 
 # 命令行创建远程仓库
-···shell
-`````````````````curl -u dlxdfz https://api.github.com/user/repos -d '{"name": "repos_name"}'`
-···
+```shell
+curl -u dlxdfz https://api.github.com/user/repos -d '{"name": "repos_name"}'
+```
 
 # linux创建git免密提交
-[https://juejin.im/post/5aeff650f265da0b8070a7e0]
+[参考](https://juejin.im/post/5aeff650f265da0b8070a7e0)
 ···shell
 cd ~
 cd .ssh
