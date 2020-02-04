@@ -45,3 +45,10 @@ git remote -v
 git remote rm origin
 git remote set-url --add --push git@github.com:dlxdfz/repos.git
 ```
+
+# 从master分支更新某个文件
+```
+git fetch # 获取变更处，但是不更新，不指定remote，默认是当地repos对应的remote
+git checkout <branch> <file path> # 更新branch下的file path
+git checkout origin/master /home/usrs/dlxdfz/workspace/ocr/readme.md
+```
