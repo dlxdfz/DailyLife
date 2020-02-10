@@ -108,6 +108,19 @@ class BT(object):
         bt.root = root
         return bt
 
+    def mirror_base(self, root):
+        if not root: return None
+        mir = Node(root.val)
+        mir.left = self.mirror_base(root.right)
+        mir.right = self.mirror_base(root.left)
+        return mir
+
+    def mirror(self):
+        mir = self.mirror_base(self.root)
+        bt = BT([], [])
+        bt.root = mir
+        return bt
+
     def depth_base(self, root, level=0):
         if not root:
             return level
@@ -139,3 +152,6 @@ if __name__=="__main__":
 
     d = bt_copy.depth()
     print(d)
+
+    mir = bt.mirror()
+    mir.qx1()
